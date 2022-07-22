@@ -1,27 +1,33 @@
 <div id="item-list">
-    <h2>View All Items</h2>
-    <table class="table" id="item-table">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Warehouse ID</th>
-            <th>Supplier ID</th>
-            <th>Min Qty</th>
-            <th>Max Qty</th>
-        </tr>
-        <tr *ngFor="let item of itemList">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.warehouseId }}</td>
-            <td>{{ item.supplierId }}</td>
-            <td>{{ item.minQty }}</td>
-            <td>{{ item.maxQty }}</td>
+    <h3 class="text-primary">View All Items</h3><hr/>
 
-        </tr>
-    </table>
+  <table class="table table-hover">
+    <thead>
+    <tr class="table-info">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Warehouse ID</th>
+      <th>Supplier ID</th>
+      <th>Min Qty</th>
+      <th>Max Qty</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of itemList">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.warehouseId }}</td>
+      <td>{{ item.supplierId }}</td>
+      <td>{{ item.minQty }}</td>
+      <td>{{ item.maxQty }}</td>
+      <td><button class="btn btn-sm btn-primary" (click)="onUpdateItem(item)">Update</button></td>
+      <td><button class="btn btn-sm btn-danger" (click)="onDeleteItem(item.id)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 

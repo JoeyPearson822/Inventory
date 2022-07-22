@@ -10,20 +10,18 @@ import { Item } from '../models/Item';
 export class NewItemComponent implements OnInit {
 
   itemToSave: Item;
-  constructor(private service: ItemService) { 
-    this.itemToSave = new Item();
+  constructor(private service: ItemService) {
+    this.itemToSave = service.currentItemToSave;
   }
 
   save(item: Item): void {
-
-
     this.service.save(item).subscribe(data => {
         console.log(data);
     })
   }
 
   ngOnInit(): void {
-   
+
   }
 
 }

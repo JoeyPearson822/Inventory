@@ -8,8 +8,10 @@ import { Item } from './models/Item';
 })
 export class ItemService {
 
+  currentItemToSave: Item = new Item();
+
   url = 'http://localhost:8080/warehouse-app/item/';
-  
+
   constructor(private htttpClient: HttpClient) { }
 
 
@@ -19,5 +21,9 @@ export class ItemService {
 
   save(item: Item){
     return this.htttpClient.post<Item>(this.url, item);
+  }
+
+  delete(id: number){
+    return this.htttpClient.post<Item>(this.url,id);
   }
 }

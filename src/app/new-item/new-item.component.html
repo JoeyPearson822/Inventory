@@ -1,36 +1,65 @@
-<h1>Inventory Management System</h1>
-<form (ngSubmit)="save(itemToSave)" id ="new-part" action="add">
-    <div class="form-group">
-        <label>ID: </label>
-        <input pInputText class="form-control" id="id" type="number" [(ngModel)]="itemToSave.id" name="id"/>
-    </div>
-    <div class="form-group">
-        <label>Name: </label>
-        <input class="form-control" id="name" type="text" [(ngModel)]="itemToSave.name" name="name"/> 
-    </div>
-    <div class="form-group">
-        <label>Quantity: </label>
-        <input class="form-control" id="quantity" type="number" [(ngModel)]="itemToSave.quantity" name="quantity"/>
-    </div>
-    <div class="form-group">
-        <label>Price: </label>
-        <input class="form-control" id="price" type="number" [(ngModel)]="itemToSave.price" name="price"/>
-    </div>
-    <div class="form-group">
-        <label>Warehouse ID: </label>
-        <input class="form-control" id="warehouseId" type="number" [(ngModel)]="itemToSave.warehouseId" name="warehouseId"/>
-    </div>
-    <div class="form-group">
-        <label>Supplier ID: </label>
-        <input class="form-control" id="supplierId" type="number" [(ngModel)]="itemToSave.supplierId" name="supplierId"/>
-    </div>
-    <div class="form-group">
-        <label>Minimum Qty: </label>
-        <input class="form-control" id="minQty" type="number" [(ngModel)]="itemToSave.minQty" name="minQty" />
-    </div>
-    <div class="form-group">
-        <label>Maximum Qty: </label>
-        <input class="form-control" id="maxQty" type="number" [(ngModel)]="itemToSave.maxQty" name="maxQty" />
-    </div>
-    <input type="submit" value="Submit" />
-</form>
+<div class="container container-fluid">
+  <h2 class="text-primary">Inventory Management System</h2><hr/>
+  <div class="">
+    <form (ngSubmit)="save(itemToSave)" id ="new-part" action="add">
+      <div class="form-group row">
+        <label class="col-2 col-form-label">ID: </label>
+        <div class="col-sm-6">
+          <input pInputText class="form-control form-control-sm"
+                 id="id" type="number" [(ngModel)]="itemToSave.id" name="id"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Name: </label>
+        <div class="col-sm-6">
+          <input class="form-control form-control-sm"
+                 id="name" type="text" [(ngModel)]="itemToSave.name" name="name"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Quantity: </label>
+        <div class="col-sm-6">
+          <input class="form-control form-control-sm"
+                 id="quantity" type="number" [(ngModel)]="itemToSave.quantity" name="quantity"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Price:</label>
+        <div class="col-sm-6">
+          <input class="form-control form-control-sm"
+                 id="price" type="number" [(ngModel)]="itemToSave.price" name="price"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Warehouse ID: </label>
+        <div class="col-sm-6">
+          <input class="form-control form-control-sm"
+                 id="warehouseId" type="number" [(ngModel)]="itemToSave.warehouseId" name="warehouseId"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Supplier ID: </label>
+        <div class="col-sm-6">
+          <input class="form-control form-control-sm"
+                 id="supplierId" type="number" [(ngModel)]="itemToSave.supplierId" name="supplierId"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Minimum Qty: </label>
+        <div class="col-sm-6">
+          <input class="form-control form-control-sm"
+                 id="minQty" type="number" [(ngModel)]="itemToSave.minQty" name="minQty" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Maximum Qty: </label>
+        <div class="col-sm-6">
+          <input class="form-control form-control-sm"
+                 id="maxQty" type="number" [(ngModel)]="itemToSave.maxQty" name="maxQty" />
+        </div>
+      </div><br/>
+      <input class="btn btn-primary" type="submit" value="Submit" />
+    </form>
+  </div>
+
+</div>

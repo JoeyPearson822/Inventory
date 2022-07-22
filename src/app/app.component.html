@@ -1,6 +1,9 @@
 <div class="container-fluid">
-    <div><h1>The Space Station</h1></div>
-    <a [routerLink]="['/add']">Add Item</a> |
-    <a [routerLink]="['/list']">View Items</a>
+    <div><h1 class="text-center text-primary">The Space Station</h1><hr/></div>
+    <div class="text-center">
+      <a [routerLink]="['/add']" class="btn btn-primary">Add Item</a> |
+      <a [routerLink]="['/list']" class="btn btn-secondary">View Items</a>
+    </div>
+  <hr/>
     <router-outlet></router-outlet>
 </div>
