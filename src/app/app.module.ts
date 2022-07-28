@@ -7,11 +7,15 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { NewItemComponent } from './new-item/new-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UpdateItemComponent } from './update-item/update-item.component';
+import { DeleteItemComponent } from './delete-item/delete-item.component';
 @NgModule({
   declarations: [
     AppComponent,
     ItemListComponent,
-    NewItemComponent
+    NewItemComponent,
+    UpdateItemComponent,
+    DeleteItemComponent
   ],
   imports: [
     BrowserModule,

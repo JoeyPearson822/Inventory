@@ -24,8 +24,10 @@
       <td>{{ item.supplierId }}</td>
       <td>{{ item.minQty }}</td>
       <td>{{ item.maxQty }}</td>
+
+
       <td><button class="btn btn-sm btn-primary" (click)="onUpdateItem(item)">Update</button></td>
-      <td><button class="btn btn-sm btn-danger" (click)="onDeleteItem(item.id)">Delete</button></td>
+      <td><button class="btn btn-sm btn-danger" (click)="delete(item.id)">Delete</button></td>
     </tr>
     </tbody>
   </table>

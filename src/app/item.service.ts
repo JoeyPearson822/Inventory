@@ -1,7 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Item } from './models/Item';
+
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type':  'application/json',
+//     Authorization: 'my-auth-token'
+//   })
+// };
 
 @Injectable({
   providedIn: 'root'
@@ -9,21 +16,32 @@ import { Item } from './models/Item';
 export class ItemService {
 
   currentItemToSave: Item = new Item();
+  currentItemToUpdate: Item = new Item();
+  currentItemToDelete: Item = new Item();
 
   url = 'http://localhost:8080/warehouse-app/item/';
 
-  constructor(private htttpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
 
   findAll(): Observable<Item[]>{
-    return this.htttpClient.get<Item[]>(this.url);
+    return this.httpClient.get<Item[]>(this.url);
+    
   }
 
   save(item: Item){
-    return this.htttpClient.post<Item>(this.url, item);
+    return this.httpClient.post<Item>(this.url, item);
+    
   }
 
-  delete(id: number){
-    return this.htttpClient.post<Item>(this.url,id);
+  update(item: Item){
+    return this.httpClient.put<Item>(this.url, item);
+    
+  }
+
+
+  delete(id: number): any{
+    return this.httpClient.delete<any>(this.url, {"body":{"id": id}});
+    
   }
 }

@@ -1,0 +1,66 @@
+<div class="container container-fluid">
+    <h2 class="text-primary">Inventory Management System</h2><hr/>
+    <div class="">
+      <form (ngSubmit)="update(itemToUpdate)" id ="new-part" action="update">
+        <div class="form-group row">
+          <label class="col-2 col-form-label">ID: </label>
+          <div class="col-sm-6">
+            <input pInputText class="form-control form-control-sm"
+                   id="id" type="number" [(ngModel)]="itemToUpdate.id" name="id"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Name: </label>
+          <div class="col-sm-6">
+            <input class="form-control form-control-sm"
+                   id="name" type="text" [(ngModel)]="itemToUpdate.name" name="name"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Quantity: </label>
+          <div class="col-sm-6">
+            <input class="form-control form-control-sm"
+                   id="quantity" type="number" [(ngModel)]="itemToUpdate.quantity" name="quantity"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Price:</label>
+          <div class="col-sm-6">
+            <input class="form-control form-control-sm"
+                   id="price" type="number" [(ngModel)]="itemToUpdate.price" name="price"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Warehouse ID: </label>
+          <div class="col-sm-6">
+            <input class="form-control form-control-sm"
+                   id="warehouseId" type="number" [(ngModel)]="itemToUpdate.warehouseId" name="warehouseId"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Supplier ID: </label>
+          <div class="col-sm-6">
+            <input class="form-control form-control-sm"
+                   id="supplierId" type="number" [(ngModel)]="itemToUpdate.supplierId" name="supplierId"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Minimum Qty: </label>
+          <div class="col-sm-6">
+            <input class="form-control form-control-sm"
+                   id="minQty" type="number" [(ngModel)]="itemToUpdate.minQty" name="minQty" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Maximum Qty: </label>
+          <div class="col-sm-6">
+            <input class="form-control form-control-sm"
+                   id="maxQty" type="number" [(ngModel)]="itemToUpdate.maxQty" name="maxQty" />
+          </div>
+        </div><br/>
+        <input class="btn btn-primary" type="submit" value="Update" />
+      </form>
+    </div>
+  
+  </div>
+  

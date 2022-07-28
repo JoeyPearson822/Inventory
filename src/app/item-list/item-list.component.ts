@@ -12,12 +12,9 @@ export class ItemListComponent implements OnInit {
   constructor(private service: ItemService, private router: Router) { }
 
   itemList!: Item[];
-  ngOnInit(): void {
 
-    this.itemList = [{"id":1,"name":"bottle cap","quantity":999,"price":0.99,"warehouseId":2,"supplierId":2,"minQty":100,"maxQty":1000},
-      {"id":2,"name":"bottle","quantity":101,"price":0.99,"warehouseId":2,"supplierId":2,"minQty":100,"maxQty":1000},
-      {"id":4,"name":"label","quantity":500,"price":0.99,"warehouseId":2,"supplierId":2,"minQty":100,"maxQty":1000},
-      {"id":5,"name":"screw","quantity":650,"price":0.42,"warehouseId":1,"supplierId":1,"minQty":10,"maxQty":10000}];
+
+  ngOnInit(): void {
 
       this.service.findAll().subscribe((data) => {
         this.itemList = data;
@@ -26,14 +23,24 @@ export class ItemListComponent implements OnInit {
   }
 
   onUpdateItem(item: Item) {
-    this.service.currentItemToSave = item;
-    this.router.navigate(['/add'])
+    this.service.currentItemToUpdate = item;
+    this.service.update(item);
+    this.router.navigate(['/update']);
   }
 
-  onDeleteItem(id: number) {
-    this.service.delete(id);
-    this.service.findAll().subscribe((data) => {
-      this.itemList = data;
-    });
+  delete(id: number): void {
+    this.service.delete(id).subscribe(() => {
+        this.itemList = this.itemList?.filter((item)=> item.id != id)
+    })
   }
+
+  // onDeleteItem(id: number) {
+  //   alert("onDelete called");
+  //   //this.service.currentItemToDelete = item;
+  //   this.service.delete(id);
+  //   // this.router.navigate(['/delete']);
+  //   // this.service.findAll().subscribe((data) => {
+  //   //   this.itemList = data;
+  //   //   });
+  // }
 }
